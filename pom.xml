@@ -20,6 +20,21 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- logback 只要导这一个包就好了 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.29</version>
+        </dependency>
+
     </dependencies>
 
 </project>

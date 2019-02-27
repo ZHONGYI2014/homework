@@ -1,9 +1,13 @@
 package com.gupao.mode.proxy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Method;
 
 public class NBDynamicProxy implements NBInvocationHandler {
 
+    private static final Logger log = LoggerFactory.getLogger(NBDynamicProxy.class);
 
     private Object target;
 
