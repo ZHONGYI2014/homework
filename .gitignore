@@ -1,3 +1,5 @@
 # about IntelliJ IDEA
 /.idea/
 *.iml
+
+/*/target/
