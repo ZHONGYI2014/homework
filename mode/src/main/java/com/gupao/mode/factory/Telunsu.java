@@ -2,7 +2,7 @@ package com.gupao.mode.factory;
 
 public class Telunsu implements Milk{
 
-    public String getName() {
+    public Object getName() {
         return "telunsu milk";
     }
 }

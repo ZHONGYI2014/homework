@@ -21,12 +21,12 @@ public class DynamicProxyTest {
 
     @Test
     public void proxy() throws IOException {
-        DynamicProxy proxy = new DynamicProxy(new ITHuman());
+        HourseProxy proxy = new HourseProxy(new ITHuman());
         Human human = (Human) proxy.getProxyInstance();
         /** com.sun.proxy.$Proxy0 */
         //以$开头的类都是动态生成的
         System.out.println(human.getClass());
-        human.work("coco");
+        human.createHourse();
     }
 
 }

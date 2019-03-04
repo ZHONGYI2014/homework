@@ -4,7 +4,7 @@ import com.gupao.mode.factory.Milk;
 
 public class SimpleFactoryTest {
 
-    public static void git(String[] args) {
+    public static void main(String[] args) {
         Milk telunsuMilk = SimpleFactory.createMilkByName("telunsu");
         Milk mengniuMilk = SimpleFactory.createMilkByName("mengniu");
         if (null != telunsuMilk) {

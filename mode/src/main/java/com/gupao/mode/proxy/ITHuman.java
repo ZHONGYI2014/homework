@@ -9,4 +9,9 @@ public class ITHuman implements Human {
     public void work(String name) {
         System.out.println(name + " design software for human life");
     }
+
+    @Override
+    public void createHourse() {
+        System.out.println("我要一所大房子");
+    }
 }
