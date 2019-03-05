@@ -8,7 +8,7 @@
       <arg column="passwd" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="age" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="bithday" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="bithday" javaType="java.util.Date" jdbcType="DATE" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
@@ -24,13 +24,11 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.gupao.mybatis.po.User">
+  <insert id="insert" parameterType="com.gupao.mybatis.po.User" >
     insert into t_user (id, account, passwd, 
-      name, age, bithday
-      )
+      name, age, bithday)
     values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{bithday,jdbcType=TIMESTAMP}
-      )
+      #{name,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{bithday,jdbcType=DATE,typeHandler=com.gupao.mybatis.typeHandler.DateTypeHandler})
   </insert>
   <insert id="insertSelective" parameterType="com.gupao.mybatis.po.User">
     insert into t_user
@@ -71,7 +69,7 @@
         #{age,jdbcType=VARCHAR},
       </if>
       <if test="bithday != null">
-        #{bithday,jdbcType=TIMESTAMP},
+        #{bithday,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -91,7 +89,7 @@
         age = #{age,jdbcType=VARCHAR},
       </if>
       <if test="bithday != null">
-        bithday = #{bithday,jdbcType=TIMESTAMP},
+        bithday = #{bithday,jdbcType=DATE},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -102,7 +100,7 @@
       passwd = #{passwd,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=VARCHAR},
-      bithday = #{bithday,jdbcType=TIMESTAMP}
+      bithday = #{bithday,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
