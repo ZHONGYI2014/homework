@@ -25,8 +25,9 @@ public class HandlerTest {
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session =factory.openSession();
         UserMapper mappper = session.getMapper(UserMapper.class);
-        User user = new User(3,"shss","asfaf","23234","13414",new Date());
-        mappper.insert(user);
+//        User user = new User(3,"shss","asfaf","23234","13414",new Date());
+//        mappper.insert(user);
+        mappper.selectByPrimaryKey(3);
         session.commit();
         session.close();
         }

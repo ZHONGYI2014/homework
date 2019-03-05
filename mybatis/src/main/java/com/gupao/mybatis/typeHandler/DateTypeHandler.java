@@ -18,16 +18,16 @@ public class DateTypeHandler extends BaseTypeHandler<Date> {
 
     @Override
     public Date getNullableResult(ResultSet resultSet, String s) throws SQLException {
-        return null;
+        return new Date(resultSet.getLong(s));
     }
 
     @Override
     public Date getNullableResult(ResultSet resultSet, int i) throws SQLException {
-        return null;
+        return new Date(resultSet.getLong(i));
     }
 
     @Override
     public Date getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
-        return null;
+        return callableStatement.getDate(i);
     }
 }

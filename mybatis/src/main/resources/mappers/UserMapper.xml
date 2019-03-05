@@ -8,7 +8,7 @@
       <arg column="passwd" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="age" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="bithday" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="bithday" javaType="java.util.Date" jdbcType="VARCHAR" typeHandler="com.gupao.mybatis.typeHandler.DateTypeHandler"/>
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
