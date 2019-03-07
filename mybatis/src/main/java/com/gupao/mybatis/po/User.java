@@ -75,4 +75,16 @@ public class User {
     public void setBithday(Date bithday) {
         this.bithday = bithday;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", bithday=" + bithday +
+                '}';
+    }
 }

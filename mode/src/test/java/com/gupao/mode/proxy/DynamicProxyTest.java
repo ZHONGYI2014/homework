@@ -13,8 +13,8 @@ public class DynamicProxyTest {
     public void getDynamicProxyClass() throws IOException {
         //通过反编译工具查看源代码
         //$Proxy4 是已经在JVM中生成的动态代理类
-        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy4", new Class[]{Human.class});
-        FileOutputStream outputStream = new FileOutputStream("//Users//pengy//$Proxy4s.class");
+        byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0@537", new Class[]{Human.class});
+        FileOutputStream outputStream = new FileOutputStream("//Users//pengy//$Proxy0@537.class");
         outputStream.write(bytes);
         outputStream.close();
     }

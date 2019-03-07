@@ -4,7 +4,6 @@ package com.gupao.mybatis.dao;
 import com.gupao.mybatis.po.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
@@ -57,12 +56,11 @@ public class StudentMapperTest {
             e.printStackTrace();
         }
         SqlSession sqlsession = new SqlSessionFactoryBuilder().build(inputStream).openSession();
-
         StudentMapper mapper = sqlsession.getMapper(StudentMapper.class);
         List<String> list = new ArrayList<>();
         list.add("数学");
         list.add("篮球");
-        Student obj = new Student(2, list);
+        Student obj = new Student(6, list);
         mapper.insert(obj);
         sqlsession.commit();
         sqlsession.close();

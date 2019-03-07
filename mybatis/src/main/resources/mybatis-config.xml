@@ -5,9 +5,11 @@
 <configuration>
     <!-- 引入外部文件 -->
     <properties resource="jdbc.properties"/>
+    <!--自定义typeHandler-->
     <typeHandlers>
         <typeHandler handler="com.gupao.mybatis.typeHandler.ListTypeHandler"/>
     </typeHandlers>
+    <!-- 自定义拦截器插件 -->
     <plugins>
         <plugin interceptor="com.gupao.mybatis.plugin.ExamplePlugin">
             <property name="someProperty" value="100"/>
