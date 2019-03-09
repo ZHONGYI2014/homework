@@ -34,6 +34,7 @@ public class NBSqlSession {
 
     /** 执行Sql */
     public <T> T selectOne(String statement, Object param) {
+
         return nbExecutor.execute(statement, param);
     }
 
