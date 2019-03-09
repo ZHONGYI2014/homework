@@ -1,7 +1,8 @@
 package com.gupao.mybatis.dao;
 
 
-import com.gupao.mybatis.po.Student;
+import com.overcome.mybatis.dao.StudentMapper;
+import com.overcome.mybatis.po.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;

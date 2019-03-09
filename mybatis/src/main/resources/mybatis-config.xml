@@ -7,11 +7,11 @@
     <properties resource="jdbc.properties"/>
     <!--自定义typeHandler-->
     <typeHandlers>
-        <typeHandler handler="com.gupao.mybatis.typeHandler.ListTypeHandler"/>
+        <typeHandler handler="com.overcome.mybatis.typeHandler.ListTypeHandler"/>
     </typeHandlers>
     <!-- 自定义拦截器插件 -->
     <plugins>
-        <plugin interceptor="com.gupao.mybatis.plugin.ExamplePlugin">
+        <plugin interceptor="com.overcome.mybatis.plugin.ExamplePlugin">
             <property name="someProperty" value="100"/>
         </plugin>
     </plugins>

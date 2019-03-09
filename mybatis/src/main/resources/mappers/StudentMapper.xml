@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gupao.mybatis.dao.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.gupao.mybatis.po.Student">
+<mapper namespace="com.overcome.mybatis.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.overcome.mybatis.po.Student">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="interest" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -20,11 +20,11 @@
     delete from student
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.gupao.mybatis.po.Student">
+  <insert id="insert" parameterType="com.overcome.mybatis.po.Student">
     insert into student (id, interest)
     values (#{id,jdbcType=INTEGER}, #{interest,typeHandler=com.gupao.mybatis.typeHandler.ListTypeHandler})
   </insert>
-  <insert id="insertSelective" parameterType="com.gupao.mybatis.po.Student">
+  <insert id="insertSelective" parameterType="com.overcome.mybatis.po.Student">
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -43,7 +43,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gupao.mybatis.po.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="com.overcome.mybatis.po.Student">
     update student
     <set>
       <if test="interest != null">
@@ -52,7 +52,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gupao.mybatis.po.Student">
+  <update id="updateByPrimaryKey" parameterType="com.overcome.mybatis.po.Student">
     update student
     set interest = #{interest,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

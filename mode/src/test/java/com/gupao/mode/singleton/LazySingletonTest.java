@@ -1,5 +1,6 @@
 package com.gupao.mode.singleton;
 
+import com.overcome.mode.singleton.LazySingleton;
 import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;

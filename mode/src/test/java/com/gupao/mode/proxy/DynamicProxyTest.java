@@ -1,6 +1,9 @@
 package com.gupao.mode.proxy;
 
 
+import com.overcome.mode.proxy.HourseProxy;
+import com.overcome.mode.proxy.Human;
+import com.overcome.mode.proxy.ITHuman;
 import org.junit.Test;
 import sun.misc.ProxyGenerator;
 

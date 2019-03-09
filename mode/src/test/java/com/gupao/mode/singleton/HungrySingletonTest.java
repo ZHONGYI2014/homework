@@ -1,6 +1,7 @@
 package com.gupao.mode.singleton;
 
 
+import com.overcome.mode.singleton.HungrySingleton;
 import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
