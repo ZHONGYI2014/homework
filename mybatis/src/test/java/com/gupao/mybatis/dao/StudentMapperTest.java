@@ -19,17 +19,6 @@ public class StudentMapperTest {
 
     SqlSession session = null;
 
-
-    @Test
-    public void testInsert() {
-        StudentMapper mapper = session.getMapper(StudentMapper.class);
-        List<String> list = new ArrayList<>();
-        list.add("数学");
-        list.add("篮球");
-        Student obj = new Student(2, list);
-        mapper.insert(obj);
-    }
-
     @Before
     public void init() {
         String resource = "mybatis-config.xml";
@@ -58,11 +47,8 @@ public class StudentMapperTest {
         }
         SqlSession sqlsession = new SqlSessionFactoryBuilder().build(inputStream).openSession();
         StudentMapper mapper = sqlsession.getMapper(StudentMapper.class);
-        List<String> list = new ArrayList<>();
-        list.add("数学");
-        list.add("篮球");
-        Student obj = new Student(6, list);
-        mapper.insert(obj);
+        Student student = mapper.selectByPrimaryKey(2);
+        System.out.println(student.toString());
         sqlsession.commit();
         sqlsession.close();
     }

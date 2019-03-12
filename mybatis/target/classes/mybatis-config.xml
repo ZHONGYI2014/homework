@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部文件 -->
+    <properties resource="jdbc.properties"/>
+    <!--自定义typeHandler-->
+    <typeHandlers>
+        <typeHandler handler="com.overcome.mybatis.typeHandler.ListTypeHandler"/>
+    </typeHandlers>
+    <!-- 自定义拦截器插件 -->
+    <plugins>
+        <plugin interceptor="com.overcome.mybatis.plugin.ExamplePlugin">
+            <property name="someProperty" value="100"/>
+        </plugin>
+    </plugins>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mappers/UserMapper.xml"/>
+        <mapper resource="mappers/StudentMapper.xml"/>
+    </mappers>
+</configuration>
