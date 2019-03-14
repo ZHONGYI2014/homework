@@ -5,6 +5,7 @@ import com.overcome.mybatis.dao.StudentMapper;
 import com.overcome.mybatis.po.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
@@ -12,6 +13,10 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +50,15 @@ public class StudentMapperTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SqlSession sqlsession = new SqlSessionFactoryBuilder().build(inputStream).openSession();
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlsession = sqlSessionFactory.openSession();
         StudentMapper mapper = sqlsession.getMapper(StudentMapper.class);
-        Student student = mapper.selectByPrimaryKey(2);
+
+        Instant current = Instant.now();
+        Student student = mapper.selectByPrimaryKey(6);
+        Instant end = Instant.now();
+        System.out.println("耗时1： " + Duration.between(current, end).toMillis());
+
         System.out.println(student.toString());
         sqlsession.commit();
         sqlsession.close();
