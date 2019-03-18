@@ -12,6 +12,7 @@
         <!-- 设计模式 -->
         <module>mode</module>
         <module>mybatis</module>
+        <module>redis</module>
     </modules>
 
     <dependencies>
