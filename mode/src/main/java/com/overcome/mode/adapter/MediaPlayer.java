@@ -5,6 +5,6 @@ package com.overcome.mode.adapter;
  */
 public interface MediaPlayer {
 
-    void play(String fileName);
+    void play(String fileType, String fileName);
 
 }

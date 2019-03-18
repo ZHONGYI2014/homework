@@ -9,12 +9,19 @@ public class MyPlayer implements MediaPlayer {
 
     MediaPlayerAdapter adapter;
 
-    @Override
-    public void play(String fileName) {
-        adapter.play(fileName);
+    public static void main(String[] args) {
+        MyPlayer p = new MyPlayer();
+        p.play("mp4", "我的天空");
+        p.play("mp3", "我的天空");
     }
 
-    public static void main(String[] args) {
-
+    @Override
+    public void play(String fileType, String fileName) {
+        if (fileType.equals("mp4")) {
+            adapter =  new MediaPlayerAdapter(fileType);
+            adapter.play(fileType, fileName);
+        } else {
+            System.out.println("不支持格式: " + fileName);
+        }
     }
 }
