@@ -13,6 +13,7 @@
         <module>mode</module>
         <module>mybatis</module>
         <module>redis</module>
+        <module>spring</module>
     </modules>
 
     <dependencies>
